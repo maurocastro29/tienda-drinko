@@ -34,6 +34,7 @@ export const Navbar = () => {
                     <div className="links"> {/*si el usuario es admin envia hacia el editor del inventario y hacia el editor del perfil del administrador*/}
                             <Link to="/editInventory"> Products </Link>
                             <Link to="/editAdmin"> Admin Profile </Link>
+                            <Link to="/login"> Logout </Link>
                         </div>
                 }
             </div>

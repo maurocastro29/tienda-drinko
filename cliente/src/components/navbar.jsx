@@ -25,16 +25,16 @@ export const Navbar = () => {
                         :
                         <div className="links"> {/*en caso de que este logeado se redirige igualmente al shop pero ahora cuando se le da clic al carrito redirecciona hacia el carrito*/}
                             <Link to="/shop"> Shop </Link>
-                            <Link to="/login"> Logout </Link>
                             <Link to="/cart">
                                 <ShoppingCart size={32}/>{/*se llama al elemento shopping cart*/}
                             </Link>
+                            <Link to="/"> Logout </Link>
                         </div>
                     :
                     <div className="links"> {/*si el usuario es admin envia hacia el editor del inventario y hacia el editor del perfil del administrador*/}
                             <Link to="/editInventory"> Products </Link>
                             <Link to="/editAdmin"> Admin Profile </Link>
-                            <Link to="/login"> Logout </Link>
+                            <Link to="/"> Logout </Link>
                         </div>
                 }
             </div>

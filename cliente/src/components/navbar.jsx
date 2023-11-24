@@ -3,11 +3,16 @@ import { Link } from "react-router-dom";//se importa para darle direcciones a la
 import { ShoppingCart } from "phosphor-react";//se importa el shopping cart ya que desde el header se llama al shopping cart
 import "./navbar.css";//se importa el css
 import { ShopContext } from "../context/shop-context";//se importa el shop context que contiene funciones utilizadas en todas partes en la aplicacion
-
+import { useNavigate } from "react-router-dom";//es para redireccionar
 
 export const Navbar = () => {
     const context = useContext(ShopContext);//le damos las funciones del shop context a la variable context
-    
+    const navigate = useNavigate();
+    const logout = () => {//redirige al login
+        navigate(`/login`);
+        context.loggedChanger(true);//se cabia a true el hook que pone si esta logeado el usuario
+    }
+
     return (
         <div className="navbar">
             <div className="logo">
@@ -28,13 +33,13 @@ export const Navbar = () => {
                             <Link to="/cart">
                                 <ShoppingCart size={32}/>{/*se llama al elemento shopping cart*/}
                             </Link>
-                            <Link to="/"> Logout </Link>
+                            <h2 className="logout" onClick={(e) => { logout()}}> Logout </h2>
                         </div>
                     :
                     <div className="links"> {/*si el usuario es admin envia hacia el editor del inventario y hacia el editor del perfil del administrador*/}
                             <Link to="/editInventory"> Products </Link>
                             <Link to="/editAdmin"> Admin Profile </Link>
-                            <Link to="/"> Logout </Link>
+                            <p className="logout" onClick={(e) => { logout()}}> Logout </p>
                         </div>
                 }
             </div>

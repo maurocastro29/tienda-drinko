@@ -6,7 +6,7 @@ export const CartItem = (props) => {
     const { cartItems, addToCart, removeFromCart } = useContext(ShopContext);//almacenamos el context dentro de esas variables
     return  (
         <div className="cartItem">
-            <img src={img1} />{/*se muestra la primera imagen del producto */}
+            <img src={'./productos/producto.png'} />{/*se muestra la primera imagen del producto */}
             <div className="description">
                 <p> 
                     <b> {nombre} </b>{/*se muestra el nombre del producto */}

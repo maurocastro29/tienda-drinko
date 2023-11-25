@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import './editProduct.css';
 import axios from 'axios';
 
 const URI = 'http://localhost:3001/products/';//aqui se hacen las peticiones 
@@ -20,9 +21,9 @@ export const Product = (props) => {
         <div className="product">
             <div className="slide-var">
                 <ul>
-                    <li><img src={img1} alt={nombre}/></li>{/*carrousel de las imagenes */}
-                    <li><img src={img2} alt={nombre}/></li>
-                    <li><img src={img3} alt={nombre}/></li>
+                    <li><img src={'./productos/producto.png'} alt={nombre}/></li>{/*carrousel de las imagenes */}
+                    <li><img src={'./productos/producto.png'} alt={nombre}/></li>
+                    <li><img src={'./productos/producto.png'} alt={nombre}/></li>
                 </ul>
             </div>
             <div className="description"> 
@@ -30,19 +31,21 @@ export const Product = (props) => {
                     <b>{nombre}</b> {/*se muestra toda la informacion de los productos */}
                 </p>
                 <p> ${precio}</p>
-                <p> Max Stock: {stockMax}</p>
-                <p> Min Stock: {stockMin}</p>
-                <form onSubmit={update} action="/auth" method="post"> {/*al momento de enviar el formulario se llama a la funcion update para actualizar el producto */}
-                    <input 
+                <div className="stock">
+                    <p> Max Stock: {stockMax}</p>
+                    <p> Min Stock: {stockMin}</p>
+                </div>
+                <form className="form-edit-product" onSubmit={update} action="/auth" method="post"> {/*al momento de enviar el formulario se llama a la funcion update para actualizar el producto */}
+                    <input className="input-form"
                     onChange={ (e) => setPrice(e.target.value)} /* se guarda el valor ingresado del input dentro de price */
-                    type="text" name="pass" id="pass" placeholder="New Prize"/>
-                    <input 
+                    type="text" name="pass" id="pass" placeholder="New Price"/>
+                    <input className="input-form"
                     onChange={ (e) => setMaxS(e.target.value)} /*se ingresa el valor ingresado del input dentro de maxstock */
-                    type="text" name="pass" id="pass" placeholder="New MaxStock"/>
-                    <input 
+                    type="text" name="pass" id="pass" placeholder="New Max stock"/>
+                    <input className="input-form"
                     onChange={ (e) => setMinS(e.target.value)} /*se ingresa el valor ingresado del input dentro de setMins*/
-                    type="text" name="pass" id="pass" placeholder="New MinStock"/>
-                    <input type="submit" className="btn-login" value="Edit" /> {/*boton para mandar el formulario */}
+                    type="text" name="pass" id="pass" placeholder="New Min stock"/>
+                    <input type="submit" className="btn-login submit-edit" value="Edit" /> {/*boton para mandar el formulario */}
                 </form>
             </div>
         </div> 

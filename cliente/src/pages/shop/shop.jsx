@@ -4,6 +4,7 @@ import './shop.css';
 import axios from 'axios';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { Producto } from '../../components/producto/producto';
 
 const URI = 'http://localhost:3001/products/'; //se hacen las peticiones aqui 
 
@@ -25,7 +26,7 @@ export const Shop = () => {
             </div>
             <div className="products"> 
                 {products.map((product) => (
-                    <Product data={product} /> //se llama al producto con sus propias informaciones 
+                    <Producto data={product} /> //se llama al producto con sus propias informaciones 
                 ))}
             </div>
         </div>

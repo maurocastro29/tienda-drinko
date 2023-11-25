@@ -1,0 +1,25 @@
+.producto{
+    max-width: 250px;
+    height: auto;
+    border: 1px solid rgb(218, 215, 215);
+    margin: 25px;
+    padding: 10px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 1px 12px rgba(242, 255, 0, 0.589);
+}
+
+.descripcion-p{
+    position: relative;
+    font-size: 1.5em;
+    bottom: 10px;
+}
+
+.description-p{
+    position: relative;
+    font-size: 1.3em;
+    bottom: 10px;
+}

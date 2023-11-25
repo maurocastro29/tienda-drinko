@@ -9,8 +9,9 @@ export const Navbar = () => {
     const context = useContext(ShopContext);//le damos las funciones del shop context a la variable context
     const navigate = useNavigate();
     const logout = () => {//redirige al login
-        navigate(`/login`);
-        context.loggedChanger(true);//se cabia a true el hook que pone si esta logeado el usuario
+        
+        context.loggedChanger(false);//se cabia a true el hook que pone si esta logeado el usuario
+        navigate(`/`);
     }
 
     return (

@@ -4,6 +4,7 @@ import './shopAddtoCart.css';
 import axios from 'axios';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { Navbar } from '../../components/navbar';
 
 const URI = 'http://localhost:3001/products/'; //aqui se hacen las peticiones 
 
@@ -19,15 +20,19 @@ export const ShopAddtoCart = () => {
         setProducts(res.data)
     }
     return (
-        <div className="shop">
-            <div className="shopTitle">
-                <h1>DRINKO</h1>
-            </div>
-            <div className="products"> 
-                {products.map((product) => (
-                    <Product data={product} />//aqui por todo el arreglo de productos se imprimen los productos
-                ))}
+        <div>
+            <Navbar></Navbar>
+            <div className="shop">
+                <div className="shopTitle">
+                    <h1>DRINKO</h1>
+                </div>
+                <div className="products"> 
+                    {products.map((product) => (
+                        <Product data={product} />//aqui por todo el arreglo de productos se imprimen los productos
+                    ))}
+                </div>
             </div>
         </div>
+        
     )
 };

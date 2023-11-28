@@ -71,8 +71,10 @@ const Login = () => {
                             navigateEditInventory(); //rediricciona al editor del inventario 
                             context.AdminChanger(true);//se activa el admin dentro del context
                         }
-                        else 
+                        else {
+                            context.AdminChanger(false);//se activa el admin dentro del context
                             navigateShopAddtoCart();//de lo contrario es un usuario normal por lo que envia al shop con los botones
+                        }
                         context.loggedChanger(true);//se cabia a true el hook que pone si esta logeado el usuario
                     }
                     else

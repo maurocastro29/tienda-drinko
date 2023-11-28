@@ -18,11 +18,24 @@
   
   .cartItem img { /*propiedades de las imagenes de los productos*/
     width: 200px;
+    margin: 0px 15px;
+    border-radius: 5px;
   }
   
   .cartItem .description {
     width: 100%;
     font-size: 30px;
+    padding: 5px;
+  }
+
+  .precio{
+    position: relative;
+    bottom: 12px;
+  }
+
+  .countHandler{
+    position: relative;
+    bottom: 35px;
   }
   
   .countHandler input {
@@ -30,14 +43,25 @@
     text-align: center;
     font-weight: bolder;
   }
-  
+
   .checkout button {
     width: 150px;
     height: 50px;
-    background-color: rgb(82, 175, 6);
-    color: white;
-    border: none;
-    border-radius: 8px;
+    background-color: rgb(19, 19, 0);
+    color: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    margin: 10px;
+    cursor: pointer;
+  }
+  
+  .checkout button:hover {
+    width: 150px;
+    height: 50px;
+    background-color: rgb(245, 245, 0);
+    color: #000000;
+    border: 1px solid #000000;
+    border-radius: 10px;
     margin: 10px;
     cursor: pointer;
   }

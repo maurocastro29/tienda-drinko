@@ -5,6 +5,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { Producto } from '../../components/producto/producto';
+import { Navbar } from '../../components/navbar';
 
 const URI = 'http://localhost:3001/products/'; //se hacen las peticiones aqui 
 
@@ -20,14 +21,18 @@ export const Shop = () => {
         setProducts(res.data)
     }
     return (
-        <div className="shop">
-            <div className="shopTitle">
-                <h1>DRINKO</h1>
-            </div>
-            <div className="products"> 
-                {products.map((product) => (
-                    <Producto data={product} /> //se llama al producto con sus propias informaciones 
-                ))}
+        <div>
+            <Navbar></Navbar>
+        
+            <div className="shop">
+                <div className="shopTitle">
+                    <h1>DRINKO</h1>
+                </div>
+                <div className="products"> 
+                    {products.map((product) => (
+                        <Producto data={product} /> //se llama al producto con sus propias informaciones 
+                    ))}
+                </div>
             </div>
         </div>
     )

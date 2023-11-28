@@ -66,6 +66,7 @@ const Register = () => {
                 type="text" name="pass" id="pass" placeholder="email"/>
                 <input type="submit" className="btn-login" value="register" />
             </form>
+            <div href="login" className="btn-register" onClick={navigateLogin}>Login</div> {/*se lleva al registro si se le da click */}
         </div>
     )
 }

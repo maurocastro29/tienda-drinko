@@ -11,7 +11,7 @@ export const CartItem = (props) => {
                 <p> 
                     <b> {nombre} </b>{/*se muestra el nombre del producto */}
                 </p>
-                <p> ${precio} </p>{/*se muestra el precio del producto */}
+                <p className="precio"> ${precio} </p>{/*se muestra el precio del producto */}
                 <div className="countHandler">
                     <button onClick={() => removeFromCart(id)}> - </button>{/*se llama a la funcion para bajar y subir la cantidad del producto comprado y igualmente para el + */}
                     <input value={cartItems[id]} />

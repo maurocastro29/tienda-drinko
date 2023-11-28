@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom' //se importa para poder redirecci
 import axios from 'axios';//se usa para hacer peticiones al servidor
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { Navbar } from '../../components/navbar';
 
 const URI = 'http://localhost:3001/products/';//esta sera la ruta en la cual se haran las peticiones
 
@@ -50,24 +51,27 @@ export const Cart = () => {
     }
 
     return (
-        <div className="cart">
-            <div> 
-                <h1> Your Cart Items</h1>
+        <div>
+            <Navbar></Navbar>
+            <div className="cart">
+                <div> 
+                    <h1> Your Cart Items</h1>
+                </div>
+                <div className="cartItems">
+                    {products.map((product) => {
+                        if (cartItems[product.id] !== 0) {{/*para cada producto lo mostramos */}
+                            return <CartItem data={product} />;
+                        }
+                    })}
+                </div>
+                {totalAmount > 0 ? //si el total es mayor que 0
+                <div className="checkout">
+                    <p> Subtotal: ${totalAmount}</p>{/*imprime el total de la compra calculado */}
+                    <button onClick={() => navigate ("/shop")}> Continue Shopping</button>{/*si se le da click se devuelve a la tienda principal */}
+                    <button onClick={buy}> Checkout </button>{/*si se le da clic llama a la funcion buy que lleva a procesar el pago */}
+                </div>
+                : <h1> Your Cart is Empty </h1>}
             </div>
-            <div className="cartItems">
-                {products.map((product) => {
-                    if (cartItems[product.id] !== 0) {{/*para cada producto lo mostramos */}
-                        return <CartItem data={product} />;
-                    }
-                })}
-            </div>
-            {totalAmount > 0 ? //si el total es mayor que 0
-            <div className="checkout">
-                <p> Subtotal: ${totalAmount}</p>{/*imprime el total de la compra calculado */}
-                <button onClick={() => navigate ("/shop")}> Continue Shopping</button>{/*si se le da click se devuelve a la tienda principal */}
-                <button onClick={buy}> Checkout </button>{/*si se le da clic llama a la funcion buy que lleva a procesar el pago */}
-            </div>
-            : <h1> Your Cart is Empty </h1>}
         </div>
     )
 };

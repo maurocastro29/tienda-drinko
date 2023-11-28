@@ -15,7 +15,6 @@ function App() {
     <div className="App"> 
       <ShopContextProvider>
       <Router>
-        <Navbar />
         <Routes>
           <Route path="/" element={<Shop />}/> /*la ruta principal sera para la tienda*/
           <Route path="/shop" element={<ShopAddtoCart />}/>/*ruta principal para cuando se a logeado alguien y pueda usar el boton*/
